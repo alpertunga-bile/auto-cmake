@@ -1,0 +1,30 @@
+### BEGIN AFTER STARTING
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmakes")
+
+### END AFTER STARTING
+
+### BEGIN AFTER PACKAGES
+
+IF (${SDL_FOUND})
+    MESSAGE(STATUS "SDL2 is found")
+ELSE (${SDL_FOUND})
+    MESSAGE(STATUS "Searching SDL directories")
+    find_library(SDL2_LIBRARY NAME SDL2.lib HINTS $ENV{VULKAN_SDK}/Lib)
+    find_library(SDL2MAIN_LIBRARY NAME SDL2main.lib HINTS $ENV{VULKAN_SDK}/Lib)
+
+    if(NOT SDL2_LIBRARY)
+        message(FATAL_ERROR "SDL2.lib is not found")
+    else ()
+        message(STATUS ${SDL2_LIBRARY})
+    endif ()
+
+    if(NOT SDL2MAIN_LIBRARY)
+        message(FATAL_ERROR "SDL2main.lib is not found")
+    else ()
+        message(STATUS ${SDL2MAIN_LIBRARY})
+    endif()
+
+ENDIF (${SDL_FOUND})
+
+### END AFTER PACKAGES

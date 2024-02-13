@@ -1,0 +1,26 @@
+{
+    "project_name": "temp_project_name",
+    "project_version": "0.1.0",
+    "configuration": "Debug",
+    "required_packages": [
+        "Vulkan"
+    ],
+    "includes": {
+        "include_dirs": [],
+        "exclude_dirs": [],
+        "exclude_files": []
+    },
+    "sources": {
+        "include_dirs": [],
+        "exclude_dirs": [],
+        "exclude_files": []
+    },
+    "project_type": "executable",
+    "precompile_headers": [
+        "array",
+        "deque"
+    ],
+    "subdirectory_path": "third-party",
+    "cxx_version": 20,
+    "extra_cmake_path": "extra_cmake.txt"
+}
